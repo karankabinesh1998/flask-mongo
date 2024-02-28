@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local environment variables
+.env
+.ini
+# IDE/Editor specific files
+.idea/
+.vscode/
+
+# Dependency directories
+venv/
+myenv/
+env/
+env27/
+env36/
+env37/
+env38/
+env39/
+
+# Other generated files
+*.log
+*.pot
+*.pyc
+*.sqlite
+*.swp
+*.swo
+*~
+_*

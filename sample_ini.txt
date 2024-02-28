@@ -1,0 +1,12 @@
+[Server]
+ip = 127.0.0.1
+port = 5000
+
+[MongoDB]
+username = user
+password = 12345
+cluster_uri = cluster0.osgdl.mongodb.net
+
+[JWT]
+SECRET_KEY = flask-mongo
+MAX_TOKENS = 20
