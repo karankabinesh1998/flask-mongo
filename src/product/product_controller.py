@@ -21,9 +21,10 @@ def fetch_all_product():
 @product.route(APP_PRODUCT_SIGNATURE, methods=['POST'])
 def add_product():
     try:
+        if not request.is_json:
+            return jsonify({'error': 'JSON data is required in request body'}), 400
         # Get product data from request body
         product_data = request.json
-        print(product_data,"product_data")
         # Check if required fields are present
         if 'name' not in product_data or 'description' not in product_data:
             return jsonify({'error': 'Name and Description are required fields'}), 400

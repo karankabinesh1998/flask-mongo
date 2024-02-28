@@ -7,8 +7,6 @@ from bson.errors import InvalidId
 
 def throw_error(field, **kwargs):
     traceback.print_exc()
-    print(field, 'error-case')
-    print(type(field), 'error-Exception')
     if field == None:
         return jsonify({'message': "{}".format(kwargs['message'])}), kwargs['code']
     if type(field) is KeyError:

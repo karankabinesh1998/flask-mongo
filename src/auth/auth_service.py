@@ -74,7 +74,6 @@ def update_user_token(user_id, tokens):
             user_object_id = ObjectId(user_object_id)
         response = client.portal_db.users.update_one({'_id': user_object_id}, {
             '$set': {'tokens': tokens}})
-        # print(user_id, tokens, 'update')
         if type(response) is UpdateResult:
             return True
         else:
@@ -83,30 +82,11 @@ def update_user_token(user_id, tokens):
         return e
 
 # Create new user
-def create_user():
+def create_user(user_data):
     client = connect_to_mongodb()
     try:
-        # # Check if user already exists
-        # if client.portal_db.users.find_one({'email': email}):
-        #     return None  # User already exists
-
+        client.portal_db.users.create_index([('email', 1)], unique=True)
         # Create user document
-        user_data = {
-            'firstName': 'karan',
-            'lastName': 'kumar',
-            'email': 'karankabinesh@gmail.com',
-            'mobile': '9080050803',
-            'alternateMobile': '',
-            'gender': 'male',
-            'password': '12345',  # Note: You should hash the password before storing it
-            'roles': 'super-admin',
-            'status': 'active'
-            # Additional fields if needed
-        }
-         # Hash the password
-        # user_data['password'] = encrypt_password(user_data['password'])
-
-
         # Insert user document into the database
         result = client.portal_db.users.insert_one(user_data)
         return result.inserted_id
