@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "a1dd72e9-a474-4644-a805-5a5a1b8db107",
+		"name": "flask-mongo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17539308"
+	},
+	"item": [
+		{
+			"name": "create-product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"sharpner\",\n    \"description\" : \"it is used for noting down datas in a paper\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/api/v1/product"
+			},
+			"response": []
+		},
+		{
+			"name": "fetch-all-product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwOTEzMjM5NywianRpIjoiMTMxZTE4ZjEtNTJjNS00NDhjLThkYjctNjY5MzUzZGRjZDUxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImI4ZmQyMDg1LWQ2YmItNGI2Ny05OWM4LTI4MGZlNjllNWQxMiIsIm5iZiI6MTcwOTEzMjM5NywiY3NyZiI6ImI5N2UwYmUwLTBjNTItNGYzOS1hMzc5LTA2ZDQzZWE0OTdmZCIsImV4cCI6MTcwOTIxODc5N30.3lcccR35g7jwl7jKz7Eh6Jmf0pv0Enhm_nkJ8B08B30",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/product?limit=5&offset=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"product"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch-product-by-id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwOTEzMjM5NywianRpIjoiMTMxZTE4ZjEtNTJjNS00NDhjLThkYjctNjY5MzUzZGRjZDUxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImI4ZmQyMDg1LWQ2YmItNGI2Ny05OWM4LTI4MGZlNjllNWQxMiIsIm5iZiI6MTcwOTEzMjM5NywiY3NyZiI6ImI5N2UwYmUwLTBjNTItNGYzOS1hMzc5LTA2ZDQzZWE0OTdmZCIsImV4cCI6MTcwOTIxODc5N30.3lcccR35g7jwl7jKz7Eh6Jmf0pv0Enhm_nkJ8B08B30",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:5000/api/v1/product/65df344697e26f434f775472"
+			},
+			"response": []
+		},
+		{
+			"name": "delete-product-by-id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:5000/api/v1/product/65df344697e26f434f775472"
+			},
+			"response": []
+		},
+		{
+			"name": "update-product-by-id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/api/v1/product/65df344697e26f434f775472"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"karankabinesh@gmail.com\",\n    \"password\":\"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/api/v1/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "create-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"karan\",\n    \"lastName\": \"kumar\",\n    \"email\": \"karankabinesh@gmail.com\",\n    \"mobile\": \"9080050803\",\n    \"alternateMobile\": \"\",\n    \"gender\": \"male\",\n    \"password\": \"12345\",\n    \"roles\": \"super-admin\",\n    \"status\": \"active\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/api/v1/user"
+			},
+			"response": []
+		}
+	]
+}

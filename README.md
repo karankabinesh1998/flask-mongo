@@ -35,6 +35,11 @@ python app.py
 ```
 The application will start running on http://localhost:5000 by default.
 
+**5. Run Api's**
+
+- Get Access Token from login-api 
+_ Postman curl calls provided in postman folder
+
 # File Structure
 - app.py: Main Python file to run the Flask application.
 - config.ini: Configuration file for the application settings.

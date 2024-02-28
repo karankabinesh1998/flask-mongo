@@ -7,9 +7,6 @@ config = configparser.ConfigParser()
 # Read the configuration file
 config.read('config.ini')
 
-# Print sections to verify
-print("Sections:", config.get('Server', 'ip'))
-
 # Get MongoDB connection details
 username = config['MongoDB']['username']
 password = config['MongoDB']['password']

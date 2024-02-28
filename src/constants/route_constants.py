@@ -4,6 +4,7 @@ APP_PRODUCT = '/product'
 APP_ID = "/<string:product_id>"
 APP_AUTH = "/auth"
 APP_LOGIN = "/login"
+APP_USER = '/user'
 
 
 # /api/v1/product
@@ -13,3 +14,6 @@ APP_PRODUCT_SIGNATURE_BY_ID = APP_API + APP_VERISON + APP_PRODUCT + APP_ID
 
 # /api/v1/auth/login
 APP_AUTH_LOGIN = APP_API + APP_VERISON + APP_AUTH + APP_LOGIN
+
+# /api/v1/user
+APP_USER = APP_API + APP_VERISON + APP_USER
